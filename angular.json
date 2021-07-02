@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "RoutesAndForms"
+    }
+  },
+  "defaultProject": "RoutesAndForms",
+  "cli": {
+    "analytics": "035c33de-1b6f-4c31-8c5e-e0a4452f3e79"
+  }
 }
