@@ -9,6 +9,7 @@ import { RelativerouteComponent } from './components/relativeroute/relativeroute
 import { ReactiveFormsModule } from '@angular/forms';
 import { ChildElementModule } from './component/child-element/child-element.module';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './components/home/home.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    ChildElementModule
+    ChildElementModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

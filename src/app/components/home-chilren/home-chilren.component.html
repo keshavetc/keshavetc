@@ -1,7 +1,10 @@
+
+<div class="text-center">
 <p>home-chilren works!</p>
 <a [routerLink]="['']" [queryParams]="{ page: 1 }">Home</a><br>
 <app-child></app-child>
 <div> 
+   <h1>Reactive Form</h1>
     <form [formGroup]="loginForm" (ngSubmit)="onClickSubmit(loginForm.value)"> 
        <input type="email" name="email" placeholder="email" formControlName="email"> 
        <br/>     
@@ -10,3 +13,23 @@
        <input type="submit" [disabled]="!loginForm.valid" value="Log In"> 
     </form> 
  </div>
+ <div> 
+   <h1>Template Driven Form</h1>
+    <form #form="ngForm" (ngSubmit)="onClickSubmit(form.value)"> 
+       <input type="email" name="email" placeholder="email" [(ngModel)]="model.email" #email="ngModel" required pattern="[^ @]*@[^ @]*">
+      
+      <div class="alert alert-danger"
+         *ngIf="email.errors && (email.dirty || email.touched)">
+         <p *ngIf="email.errors.pattern">Email format is required</p>
+      </div>
+       <br/>     
+       <input type="password" name="password" placeholder="password" [(ngModel)]="model.password" #password="ngModel" required minlength="6">
+       <div class="alert alert-danger"
+         *ngIf="password.errors && (password.dirty || password.touched)">
+            <p *ngIf="password.errors.minlength">Password must be at least 6 character</p>
+      </div>
+       <br/>
+       <input type="submit" [disabled]="!form.valid" value="Log In"> 
+    </form> 
+ </div>
+</div>

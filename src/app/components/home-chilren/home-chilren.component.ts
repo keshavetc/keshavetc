@@ -8,6 +8,10 @@ import { FormGroup,FormControl,Validators } from '@angular/forms';
 })
 export class HomeChilrenComponent implements OnInit {
   loginForm;
+  model={
+    email:'',
+    password:''
+  };
   constructor() { }
 
   ngOnInit(): void {
